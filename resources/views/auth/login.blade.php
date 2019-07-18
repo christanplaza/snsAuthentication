@@ -3,37 +3,50 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow justify-content-center text-center">
+        @if (session('message'))
+        <div class="col-md-8">
+            <div class="alert alert-danger" role="alert">
+                {{ session('message') }}
+                <b>{{ session('email') }}</b> with {{ Str::title(session('provider')) }}
             </div>
         </div>
+        @endif
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-
+        <div class="col-md-8">
+            <div class="card mt-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 mt-4 text-center">
-                            <h1 class="title">Login</h1>
+                            <h1 class="title">Social Media Login</h1>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-2">
                         <div class="col-lg-6">
-                            <a href="{{ url('/auth/redirect/facebook/') }}" class="btn btn-block facebook-blue text-white">Login with Facebook</a>
+                            <a href="{{ url('/auth/redirect/facebook/') }}" class="btn btn-block facebook-blue text-white">Facebook</a>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-2">
                         <div class="col-lg-6">
-                            <a href="{{ url('/auth/redirect/twitter/') }}" class="btn btn-block twitter-blue text-white">Login with Twitter</a>
+                            <a href="{{ url('/auth/redirect/twitter/') }}" class="btn btn-block twitter-blue text-white">Twitter</a>
                         </div>
                     </div>
                     <div class="row justify-content-center mt-2">
                         <div class="col-lg-6">
-                            <a href="{{ url('/auth/redirect/google/') }}" class="btn btn-block google-red text-white">Login with Google</a>
+                            <a href="{{ url('/auth/redirect/google/') }}" class="btn btn-block google-red text-white">Google</a>
                         </div>
                     </div>
-                    <hr>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-5">
+                            <hr>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <h3>OR</h3>
+                        </div>
+                        <div class="col-lg-5">
+                            <hr>
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

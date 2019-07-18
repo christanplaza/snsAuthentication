@@ -16,6 +16,10 @@ class SocialController extends Controller
     public function callback($provider)
     {
         $getInfo = $provider == 'google' ? Socialite::driver($provider)->stateless()->user() : Socialite::driver($provider)->user();
+        $existingUser = User::where('email', $getInfo->email)->first();
+        if ($existingUser && $existingUser->provider != $provider) {
+            return redirect('/login')->with('message', 'User with the same email already exists!')->with('email', $getInfo->email)->with('provider', $existingUser->provider);
+        }
         $user = $this->createUser($getInfo, $provider);
         auth()->login($user);
 
