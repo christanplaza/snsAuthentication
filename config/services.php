@@ -44,4 +44,22 @@ return [
         ],
     ],
 
+    'twitter' => [
+        'client_id' => env('TWITTER_API_KEY'),
+        'client_secret' => env('TWITTER_SECRET_KEY'),
+        'redirect' => env('TWITTER_CALLBACK')
+    ],
+
+    'facebook' => [
+        'client_id' => env('FACEBOOK_API_KEY'),
+        'client_secret' => env('FACEBOOK_SECRET_KEY'),
+        'redirect' => env('FACEBOOK_CALLBACK')
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_API_KEY'),
+        'client_secret' => env('GOOGLE_SECRET_KEY'),
+        'redirect' => env('GOOGLE_CALLBACK')
+    ]
+
 ];

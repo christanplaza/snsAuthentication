@@ -17,3 +17,53 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$white: #ffffff;
+$facebook-blue: #3b5998;
+$twitter-blue: #1da1f2;
+$google-red: #db3236;
+
+.twitter-blue {
+    background-color: $twitter-blue !important;
+}
+
+.facebook-blue {
+    background-color: $facebook-blue !important;
+}
+
+.google-red {
+    background-color: $google-red !important;
+}
+
+.blue {
+    color: $blue;
+}
+.indigo {
+    color: $indigo;
+}
+.purple {
+    color: $purple;
+}
+.pink {
+    color: $pink;
+}
+.red {
+    color: $red;
+}
+.orange {
+    color: $orange;
+}
+.yellow {
+    color: $yellow;
+}
+.green {
+    color: $green;
+}
+.teal {
+    color: $teal;
+}
+.cyan {
+    color: $cyan;
+}
+.white {
+    color: $white;
+}
