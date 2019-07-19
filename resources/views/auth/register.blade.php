@@ -5,13 +5,42 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 mt-4 text-center">
+                            <h1 class="title">Sign Up with Social Media</h1>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <div class="col-lg-6">
+                            <a href="{{ url('/auth/redirect/facebook/') }}" class="btn btn-block facebook-blue text-white">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <div class="col-lg-6">
+                            <a href="{{ url('/auth/redirect/twitter/') }}" class="btn btn-block twitter-blue text-white">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                        <div class="col-lg-6">
+                            <a href="{{ url('/auth/redirect/google/') }}" class="btn btn-block google-red text-white">Google</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-5">
+                            <hr>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <h3>OR</h3>
+                        </div>
+                        <div class="col-lg-5">
+                            <hr>
+                        </div>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row mt-4">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
